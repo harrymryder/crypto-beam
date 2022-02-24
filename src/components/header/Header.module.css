@@ -1,0 +1,17 @@
+.header {
+    background-color: transparent;
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.header p {
+    color: black;
+}
+
+.header-right {
+    display: flex;    
+}
