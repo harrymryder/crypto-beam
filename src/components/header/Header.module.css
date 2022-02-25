@@ -1,6 +1,6 @@
 .header {
     background-color: transparent;
-    padding-top: 32px;
+    height: 120px;
     padding-left: 16px;
     padding-right: 16px;
     display: flex;
@@ -8,10 +8,16 @@
     align-items: center;    
 }
 
-.header p {
-    color: black;
+.header-item {
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 12px;
 }
 
 .header-right {
     display: flex;    
+}
+
+.toggle {
+    margin-top: 16px;
 }

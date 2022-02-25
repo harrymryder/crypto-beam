@@ -14,8 +14,8 @@ function ThemeToggle() {
         <div id="darkmode">
             <input type="checkbox" className="checkbox" id="checkbox" onChange={toggleTheme} />
             <label htmlFor="checkbox" className="label">
-                <BsMoonStarsFill color="white" />
-                <BsFillSunFill color="yellow" />
+                <BsMoonStarsFill color="white" size='6' />
+                <BsFillSunFill color="yellow"  size='6' />
                 <div className="ball"></div>
             </label>
         </div>
