@@ -3,10 +3,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ThemeProvider from './store/theme/ThemeProvider';
+import { BrowserRouter, Router } from 'react-router-dom';
 
 ReactDOM.render(
   <ThemeProvider>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ThemeProvider>,
   document.getElementById('root')
 );
