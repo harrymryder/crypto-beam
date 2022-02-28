@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import ThemeToggle from './ThemeToggle';
 import logo from '../../assets/bananas.png';
 import ThemeContext from '../../store/theme/theme-context';
@@ -9,35 +9,31 @@ import ThemeContext from '../../store/theme/theme-context';
 function Header() {
     const theme = useContext(ThemeContext);
     const darkMode: boolean = theme.darkMode;
-    let classes = styles.link;
-    if (theme.darkMode) {
-        classes = styles['dark-mode'];
-    } else {
-        classes = styles['light-mode'];
-    }
 
-   
-     
-
-    const classesFunction = (props:any): string => {
+    const classesFunction = (isActive: boolean): string => {
+        console.log('Running function');
         let classes: string = styles.link;
-        classes = props.isActive ? classes.concat(` ${styles.active}`).toString() : classes;
-        classes = darkMode ? classes.concat(` ${styles['dark-mode']}`).toString() : classes.concat(` ${styles['light-mode']}`).toString();
-        console.log(classes);
+        console.log(`Is active: ${isActive}`);
+        classes = isActive ? classes.concat(` ${styles.active}`).toString() : classes;
+        // classes = darkMode ? classes.concat(` ${styles['dark-mode']}`).toString() : classes.concat(` ${styles['light-mode']}`).toString();
         return classes;
     };
 
     return (
         <header className={styles.header}>
-            <img src={logo} height='24' width='24' alt='logo'/>
+            <img src={logo} height='24' width='24' alt='logo' />
             <div>
-                <NavLink className={classesFunction} to='/'>Home</NavLink>
-                <NavLink className={`${styles.link} ${classes}`} to={'item-name'}>Governance</NavLink>                
-            </div>         
+                <NavLink className={({ isActive }) =>
+                    isActive ? classesFunction(true) : classesFunction(false)
+                } to='/'>Home</NavLink>
+                <NavLink className={({ isActive }) =>
+                    isActive ? classesFunction(true) : classesFunction(false)
+                } to='/profile'>Profile</NavLink>
+            </div>
             <div className={styles['header-right']}>
                 {/* <p className={styles['header-item']}>Connect wallet</p>                 */}
                 <div className={styles['header-item']}>
-                    <ThemeToggle /> 
+                    <ThemeToggle />
                 </div>
             </div>
         </header>

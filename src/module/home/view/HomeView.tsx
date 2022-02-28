@@ -23,13 +23,13 @@ function HomeView() {
     }
 
     if (isFetching) {
-        content = <Spinner name='double-bounce' />
+        content = <Spinner name='circle' />
     } else if (isSearching) {
         content = <p>Apps here...!</p>
     } else {
         content = <PrimaryContainer borderRadius='10px'>
             <div className={styles['home-container']}>
-                <h1 className={styles.title}>Popular</h1>
+                <h1>Popular</h1>
                 <p>App 1</p>
                 <p>App 2</p>
                 <p>App 3</p>

@@ -1,3 +1,5 @@
+@import '../../index';
+
 .header {
     background-color: transparent;
     height: 120px;
@@ -5,7 +7,7 @@
     padding-right: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;        
 }
 
 .header-item {
@@ -29,8 +31,13 @@
     font-size: 12px;    
 }
 
+.active {
+    color: #161528;
+    font-weight: 700;
+}
+
 .dark-mode {
-    color: white;
+    color: white;    
 }
 
 .light-mode {
