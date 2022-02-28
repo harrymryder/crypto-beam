@@ -4,7 +4,6 @@ import { Route, Routes, Link, Router } from "react-router-dom";
 import classes from './App.module.css';
 import Header from "./components/header/Header";
 import HomeView from "./module/home/view/HomeView";
-import SearchProvider from "./store/search/SearchProvider";
 import ThemeContext from "./store/theme/theme-context";
 
 function App() {
@@ -16,10 +15,7 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={
-            <SearchProvider>
-              <HomeView />
-            </SearchProvider>} />
+          <Route path="/" element={<HomeView />} />
         </Routes>
       </main>
     </div>

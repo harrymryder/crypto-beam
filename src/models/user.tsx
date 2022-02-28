@@ -1,4 +1,4 @@
-class Project {
+class User {
     id: number;
     name: string;
 
@@ -8,4 +8,4 @@ class Project {
     }
 }
 
-export default Project;
+export default User;

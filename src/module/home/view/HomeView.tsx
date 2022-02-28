@@ -1,16 +1,31 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
+import { setTimeout } from 'timers';
+
 import PrimaryContainer from '../../../components/PrimaryContainer/PrimaryContainer';
 import SearchBar from '../../../components/SearchBar/SearchBar';
-import SearchContext from '../../../store/search/search-context';
-import SearchProvider from '../../../store/search/SearchProvider';
 import styles from './HomeView.module.css';
 
 function HomeView() {
-    const context = useContext(SearchContext);
+    var Spinner = require('react-spinkit');
+    const [isSearching, setIsSearching] = useState(false);
+    const [isFetching, setIsFetching] = useState(false);
     let content;
 
-    if (context.isSearching) {
-        content = <p>Searching...</p>;
+    function onSearchHandler(event: React.FormEvent<HTMLInputElement>) {
+        const value = event.currentTarget.value;
+        if (value.length > 0) {
+            setIsFetching(true);
+            setInterval(() => setIsFetching(false), 5000);            
+            setIsSearching(true);
+        } else {
+            setIsSearching(false);
+        }
+    }
+
+    if (isFetching) {
+        content = <Spinner name='double-bounce' />
+    } else if (isSearching) {
+        content = <p>Apps here...!</p>
     } else {
         content = <PrimaryContainer borderRadius='10px'>
             <div className={styles['home-container']}>
@@ -22,11 +37,9 @@ function HomeView() {
         </PrimaryContainer>;
     }
 
-
-
     return (
         <div className={styles.home}>
-            <SearchBar />
+            <SearchBar onSearch={onSearchHandler} />
             {content}
         </div>
     );
