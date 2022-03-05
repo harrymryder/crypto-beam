@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-
 import styles from './SearchBar.module.css';
 import { BsSearch } from "react-icons/bs";
 import PrimaryContainer from '../PrimaryContainer/PrimaryContainer';

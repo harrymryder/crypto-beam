@@ -5,36 +5,47 @@ import styles from './Header.module.scss';
 import ThemeToggle from './ThemeToggle';
 import logo from '../../assets/bananas.png';
 import ThemeContext from '../../store/theme/theme-context';
+import PrimaryButton from '../buttons/PrimaryButton';
 
 function Header() {
     const theme = useContext(ThemeContext);
-    const darkMode: boolean = theme.darkMode;
+    // const darkMode: boolean = theme.darkMode;
 
-    const classesFunction = (isActive: boolean): string => {
-        console.log('Running function');
-        let classes: string = styles.link;
-        console.log(`Is active: ${isActive}`);
+    const classesFunction = (isActive: boolean): string => {        
+        let classes: string = styles.link; 
         classes = isActive ? classes.concat(` ${styles.active}`).toString() : classes;
         // classes = darkMode ? classes.concat(` ${styles['dark-mode']}`).toString() : classes.concat(` ${styles['light-mode']}`).toString();
         return classes;
     };
 
+    function connectWalletHandler(event: React.MouseEvent<HTMLElement>) {
+        event.preventDefault();
+    }
+
     return (
         <header className={styles.header}>
             <img src={logo} height='24' width='24' alt='logo' />
             <div>
+                {/* Home */}
                 <NavLink className={({ isActive }) =>
                     isActive ? classesFunction(true) : classesFunction(false)
                 } to='/'>Home</NavLink>
+
+                {/* Campaigns */}
                 <NavLink className={({ isActive }) =>
                     isActive ? classesFunction(true) : classesFunction(false)
-                } to='/profile'>Profile</NavLink>
+                } to='/campaigns'>Campaigns</NavLink>
+
+                {/* My donations */}
+                <NavLink className={({ isActive }) =>
+                    isActive ? classesFunction(true) : classesFunction(false)
+                } to='/my-donations'>My donations</NavLink>
             </div>
-            <div className={styles['header-right']}>
-                {/* <p className={styles['header-item']}>Connect wallet</p>                 */}
+            <div className={styles['header-right']}>             
                 <div className={styles['header-item']}>
                     <ThemeToggle />
                 </div>
+                <PrimaryButton text='Connect' onClick={connectWalletHandler} />
             </div>
         </header>
     );
