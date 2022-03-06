@@ -4,7 +4,7 @@ import { ThemeProvider } from "react-bootstrap";
 
 import styles from './App.module.scss';
 import ThemeContext from "./store/theme/theme-context";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import HomeView from "./module/home/view/HomeView";
 import CampaignsView from "./module/campaigns/view/CampaignsView";
 import DonationsView from "./module/donations/view/DonationsView";

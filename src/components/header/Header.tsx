@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
 import styles from './Header.module.scss';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import logo from '../../assets/bananas.png';
 import ThemeContext from '../../store/theme/theme-context';
-import PrimaryButton from '../buttons/PrimaryButton';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 function Header() {
     const theme = useContext(ThemeContext);

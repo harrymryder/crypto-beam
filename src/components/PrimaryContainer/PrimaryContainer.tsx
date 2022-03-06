@@ -16,5 +16,3 @@ const PrimaryContainer: React.FC<{borderRadius: string}> = (props) => {
 }
 
 export default PrimaryContainer;
-
-// 
