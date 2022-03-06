@@ -1,23 +1,26 @@
-import { Col, Container, Row } from 'react-bootstrap';
+import { Box } from '@mui/material';
+import { BsArrowRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import PrimaryButton from '../../../components/buttons/PrimaryButton';
+
 import styles from './HomeView.module.css';
 
 function HomeView() {
-    const COLUMNS: string[] = [
-        'One',
-        'Two',
-        'Three',
-        'Four',
-        'Five',
-        'Six'
-    ];
-
     return (
         <div className={styles.home}>
-            {/* <Container> */}
-                <Row>
-                    {COLUMNS.map((string) => <Col xs={12} md={4} lg={3}>{string}</Col>)}
-                </Row>
-            {/* </Container> */}
+            <section className={styles['home-title']}>
+                <h1>Donate your crypto to a refugee. Enable them to build a new life.</h1>
+                <Box sx={{ height: 40 }} />
+                <Link to="/campaigns">
+                    <PrimaryButton
+                        text='Donate directly'
+                        fontSize={16}
+                        paddingVertical={16}                
+                        paddingHorizontal={24}       
+                        icon={<BsArrowRight color={'white'} size={20}
+                        />} />
+                </Link>
+            </section>
         </div>
     );
 }

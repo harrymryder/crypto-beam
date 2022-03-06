@@ -1,18 +1,20 @@
 .home {    
-    min-height: 100vh;
-    /* width: auto;
-    max-width: 600px; */
+    height: 100vh;
+    width: auto;
+    max-width: 800px;
     margin: 0 auto;
-    margin-top: 40px;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding: 40px 24px;   
 }
 
-.home-container {
-    margin-top: 40px;
-    padding: 24px;
+.home-title {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.title {
-    color: #FCE762;
+.home-title h1 {
+    font-size: 40px;
+    text-align: center;
 }
