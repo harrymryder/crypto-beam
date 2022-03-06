@@ -24,8 +24,10 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <img src={logo} height='24' width='24' alt='logo' />
-            <div>
+            <div className={styles['header-left']}>        
+                <img src={logo} height='24' width='24' alt='logo' />
+            </div>
+            <div className={styles['nav-links']}>
                 {/* Home */}
                 <NavLink className={({ isActive }) =>
                     isActive ? classesFunction(true) : classesFunction(false)

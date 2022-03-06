@@ -13,8 +13,8 @@ class Campaign {
     target?: number;
     totalRaised?: number;
 
-    constructor({title, personId}: {title: string, personId: number}) {
-        this.id = Math.random();
+    constructor({ id, title, personId }: { id: number, title: string, personId: number }) {
+        this.id = id;
         this.title = title;
         this.personId = personId;
     }

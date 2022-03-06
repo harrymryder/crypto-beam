@@ -16,8 +16,22 @@
     font-size: 12px;
 }
 
+// .nav-links {
+//     width: 100vw;
+//     display: flex;
+//     justify-content: center;
+// }
+
+.header-left {
+    width: 200px;
+    display: flex;
+    justify-content: start; 
+}
+
 .header-right {
-    display: flex;    
+    width: 200px;
+    display: flex;
+    justify-content: end; 
 }
 
 .toggle {

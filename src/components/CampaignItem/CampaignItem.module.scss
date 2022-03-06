@@ -1,6 +1,12 @@
 .campaign-item {
-    margin: 20px;
-    padding: 10px 0;    
+    margin-bottom: 20px;  
+    padding: 20px;  
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.link {
+    text-decoration: none !important;
 }
 
 h4 {

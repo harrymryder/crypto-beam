@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import HomeView from "./module/home/view/HomeView";
 import CampaignsView from "./module/campaigns/view/CampaignsView";
 import DonationsView from "./module/donations/view/DonationsView";
+import CampaignDetailView from "./module/campaign-detail/view/CampaignDetailView";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<HomeView />} />
             <Route path="/campaigns" element={<CampaignsView />} />
             <Route path="/my-donations" element={<DonationsView />} />
+            <Route path="/campaigns/:campaignId" element={<CampaignDetailView />} />
           </Routes>
         </main>
       </div>
