@@ -1,7 +1,7 @@
 .home {    
     min-height: 100vh;
-    width: auto;
-    max-width: 600px;
+    /* width: auto;
+    max-width: 600px; */
     margin: 0 auto;
     margin-top: 40px;
     padding-right: 24px;

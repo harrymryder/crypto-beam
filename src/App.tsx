@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "react-bootstrap";
 
 import styles from './App.module.scss';
 import ThemeContext from "./store/theme/theme-context";
@@ -13,16 +14,20 @@ function App() {
   const darkMode: boolean = theme.darkMode;
 
   return (
-    <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="/campaigns" element={<CampaignsView />} />
-          <Route path="/my-donations" element={<DonationsView />} />
-        </Routes>
-      </main>
-    </div>
+    <ThemeProvider
+      breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+    >
+      <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/campaigns" element={<CampaignsView />} />
+            <Route path="/my-donations" element={<DonationsView />} />
+          </Routes>
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 
