@@ -25,7 +25,7 @@ function Header() {
     return (
         <header className={styles.header}>
             <div className={styles['header-left']}>        
-                <img src={logo} height='24' width='24' alt='logo' />
+                {/* <img src={logo} height='24' width='24' alt='logo' /> */}
             </div>
             <div className={styles['nav-links']}>
                 {/* Home */}
@@ -47,7 +47,7 @@ function Header() {
                 <div className={styles['header-item']}>
                     <ThemeToggle />
                 </div>
-                <PrimaryButton text='Connect' onClick={connectWalletHandler} />
+                <PrimaryButton text='Connect' onClick={connectWalletHandler} animate={false} />
             </div>
         </header>
     );

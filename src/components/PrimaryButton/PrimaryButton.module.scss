@@ -1,10 +1,27 @@
+@import '../../theme/_index';
+
 .button {
-    background-color: black;
+    transition: all 0.5s ease-in;
+    background-color: $primaryColor;
     padding: 4px 16px;
     color: white;
+    border: none;
     border-radius: 50px;
     font-size: 12px;
     font-weight: 700;
+    box-shadow: $primaryBoxShadow;
+}
+
+.button-active {
+    transition: all 0.5s ease-in;
+    background-color: $primaryColor;
+    padding: 4px 16px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 8px;
+    font-weight: 700;
+    box-shadow: $primaryBoxShadow;
 }
 
 .icon {

@@ -9,6 +9,7 @@ import HomeView from "./module/home/view/HomeView";
 import CampaignsView from "./module/campaigns/view/CampaignsView";
 import DonationsView from "./module/donations/view/DonationsView";
 import CampaignDetailView from "./module/campaign-detail/view/CampaignDetailView";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -28,6 +29,7 @@ function App() {
             <Route path="/campaigns/:campaignId" element={<CampaignDetailView />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );

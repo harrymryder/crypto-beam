@@ -1,16 +1,10 @@
-// @import "~bootstrap/scss/bootstrap";
-
-.dark-mode {
-    background-color: #161528;
+.dark-mode {    
+    background-color: #121113;
     color: white;
 }
 
-/* .dark-mode h1 h2 h3 h4 h5 h6 {
-    color: white;
-} */
-
 .light-mode {
-    background-color: #fffded;
+    background-color: #fffffb;
     color: #333333;
 }
 
@@ -25,7 +19,3 @@
 p {
     font-size: 12px;
 }
-
-/* .light-mode h1 h2 h3 h4 h5 h6 {
-    color: #161528;
-} */
