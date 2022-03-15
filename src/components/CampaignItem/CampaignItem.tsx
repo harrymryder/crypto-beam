@@ -20,6 +20,8 @@ const CampaignItem: React.FC<{ campaign: Campaign }> = (props) => {
                     <p>{person?.firstName}</p>
                     <h4>{props.campaign.title}</h4>
                     <Box sx={{ height: 40 }} />
+                    <h6>{person?.address}</h6>
+                    {/* <Box sx={{ height: 40 }} /> */}
                 </div>
             </Link>
         </Card>

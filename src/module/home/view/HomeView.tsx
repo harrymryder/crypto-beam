@@ -10,8 +10,8 @@ function HomeView() {
     return (
         <ViewContainer>
             <section className={styles['home-title']}>
-                {/* <h1>Donate your crypto to a refugee. Enable them to build a new life.</h1>
-                <Box sx={{ height: 40 }} /> */}
+                <h1>Donate your crypto to a refugee. Enable them to build a new life.</h1>
+                <Box sx={{ height: 40 }} />
                 <Link to="/campaigns">
                     <PrimaryButton
                         text='Donate directly'
