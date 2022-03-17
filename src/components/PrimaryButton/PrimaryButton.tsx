@@ -10,7 +10,7 @@ const PrimaryButton: React.FC<{
     paddingHorizontal?: number,
     icon?: any,
     animate?: boolean,
-    onClick?: React.MouseEventHandler<HTMLButtonElement>
+    onClick?: any,
     isDisabled?: boolean,
 }> = (props) => {
     const theme = useContext(ThemeContext);

@@ -10,9 +10,17 @@
 
 .modal {
     position: fixed;
-    top: 20vh;
-    left: 5%;
-    width: 90%;
+    // width: 500px;
+    // height: 200px;
+    margin: 0 auto; /* Will not center vertically and won't work in IE6/7. */
+    // left: 0;
+    // right: 0;
+    // height: 200px;
+    top: 25%;
+    left: 20%;
+    right: 20%;
+    // margin-top: -100px; /* Negative half of height. */
+    // margin-left: -250px; /* Negative half of width. */
     background-color: white;
     padding: 1rem;
     border-radius: 14px;

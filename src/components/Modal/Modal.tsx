@@ -12,6 +12,7 @@ function Backdrop(props: any) {
 function ModalOverlay(props: any) {
     return (
         <div className={classes.modal}>
+            <h4>{props.title}</h4>
             <div className={classes.content}>{props.children}</div>
         </div>
     );
@@ -19,11 +20,13 @@ function ModalOverlay(props: any) {
 
 const portalElement = document.getElementById('overlays') as HTMLElement;
 
-const Modal: React.FC<{onClose: Function}> = (props) => {
+
+//TODO: Add title and close icon and ok button
+const Modal: React.FC<{onClose: Function, title: string}> = (props) => {
     return <Fragment>
         {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, portalElement)}
         {ReactDOM.createPortal(
-            <ModalOverlay>{props.children}</ModalOverlay>,
+            <ModalOverlay onClose={props.onClose} title={props.title} >{props.children}</ModalOverlay>,
             portalElement)}
     </Fragment>
 }
