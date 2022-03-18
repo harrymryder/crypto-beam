@@ -1,4 +1,3 @@
-// import { Fragment } from 'react/cjs/react.production.min';
 import { Fragment } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,7 +11,7 @@ function Backdrop(props: any) {
 function ModalOverlay(props: any) {
     return (
         <div className={classes.modal}>
-            <h4>{props.title}</h4>
+            <h4 className={classes.title}>{props.title}</h4>
             <div className={classes.content}>{props.children}</div>
         </div>
     );
