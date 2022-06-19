@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
+    "@matterlabs/zksync-contracts": "^0.1.0",
     "@metamask/onboarding": "^1.0.1",
     "@mui/material": "^5.4.4",
     "@reduxjs/toolkit": "^1.7.2",
@@ -32,7 +33,9 @@
     "sizedbox": "^1.0.3",
     "typescript": "~4.1.5",
     "url": "^0.11.0",
-    "web3": "^1.7.1"
+    "web3": "^1.7.1",
+    "zksync": "^0.12.0-alpha.6",
+    "zksync-web3": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

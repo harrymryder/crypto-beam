@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ThemeProvider from './store/theme/ThemeProvider';
+import ThemeProvider from './core/store/theme/ThemeProvider';
 import { BrowserRouter, Router } from 'react-router-dom';
 
 ReactDOM.render(

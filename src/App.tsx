@@ -3,13 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "react-bootstrap";
 
 import styles from './App.module.scss';
-import ThemeContext from "./store/theme/theme-context";
-import Header from "./components/Header/Header";
-import HomeView from "./module/home/view/HomeView";
-import CampaignsView from "./module/campaigns/view/CampaignsView";
-import DonationsView from "./module/donations/view/DonationsView";
-import CampaignDetailView from "./module/campaign-detail/view/CampaignDetailView";
-import Footer from "./components/Footer/Footer";
+import ThemeContext from "./core/store/theme/theme-context";
+import AppHeader from "./core/components/AppHeader/AppHeader";
+import HomeView from "./features/home/view/HomeView";
+import CampaignDetailView from "./features/campaign-detail/view/CampaignDetailView";
+import Footer from "./core/components/Footer/Footer";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -20,12 +18,12 @@ function App() {
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
     >
       <div className={darkMode ? styles['dark-mode'] : styles['light-mode']}>
-        <Header />
+        <AppHeader />
         <main>
           <Routes>
             <Route path="/" element={<HomeView />} />
-            <Route path="/campaigns" element={<CampaignsView />} />
-            <Route path="/my-donations" element={<DonationsView />} />
+            {/* <Route path="/campaigns" element={<CampaignsView />} />
+            <Route path="/my-donations" element={<DonationsView />} /> */}
             <Route path="/campaigns/:campaignId" element={<CampaignDetailView />} />
           </Routes>
         </main>

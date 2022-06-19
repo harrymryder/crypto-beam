@@ -1,0 +1,54 @@
+@import '../../theme/colors.scss';
+
+.darkMode {
+    color: $offWhite,
+}
+
+.lightMode {
+    color: $darkGrey,
+}
+
+/* #darkmode {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#darkmode .dark {
+    background-color: #292c35;
+}
+
+#darkmode .checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+#darkmode .label {
+    width: 16px;
+    height: 4px;
+    background-color: #111;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+#darkmode .ball {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+#darkmode .checkbox:checked+.label .ball {
+    transform: translateX(11px);
+} */
