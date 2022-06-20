@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useContext, useEffect, useRef, useState } from 'react';
 import MetaMaskOnboarding from '@metamask/onboarding';
-
-import web3 from '../../../web3';
+import { ethers } from "ethers";
 import styles from './AppHeader.module.scss';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
-import logo from '../../assets/bananas.png';
+import ThemeToggle from './ThemeToggle';
+import logo from '../../../assets/bananas.png';
 import ThemeContext from '../../store/theme/theme-context';
 import AppButton from '../AppButton/AppButton';
 
@@ -15,14 +14,17 @@ const CONNECT_TEXT = 'Connect';
 
 function AppHeader() {
     const theme = useContext(ThemeContext);
-    // const darkMode: boolean = theme.darkMode;    
+    const darkMode: boolean = theme.darkMode;
     let address: string;
     const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
     const [isConnected, setIsConnected] = useState(false);
     const [accounts, setAccounts] = useState([]);
     const onboarding: any = useRef();
 
+
+
     useEffect(() => {
+        connectWalletHandler();
         if (!onboarding.current) {
             onboarding.current = new MetaMaskOnboarding();
         }
@@ -46,25 +48,34 @@ function AppHeader() {
             setAccounts(newAccounts);
         }
 
-        let ethereum: any = (window as any).ethereum;
-        
+        const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+
         if (MetaMaskOnboarding.isMetaMaskInstalled()) {
             try {
-                await ethereum.request({
-                    method: "wallet_switchEthereumChain",
-                    params: [{ chainId: '0x1' }],
-                });
-                ethereum.request({
-                    method: 'eth_requestAccounts'
-                }).then(handleNewAccounts);
-                ethereum.on('accountsChanged', handleNewAccounts);
-                return () => {
-                    ethereum.off('accountsChanged', handleNewAccounts);
-                };
+                await provider.send(
+                    "eth_requestAccounts",
+                    [],
+                ).then(handleNewAccounts);
+                
+                const signer = provider.getSigner();
+                console.log("Account:", await signer.getAddress());
+                // await ethereum.request({
+                //     method: "wallet_switchEthereumChain",
+                //     params: [{ chainId: '0x1' }],
+                // });
+                //     ethereum.request({
+                //         method: 'eth_requestAccounts'
+                //     }).then(handleNewAccounts);
+
+                //     ethereum.on('accountsChanged', handleNewAccounts);
+
+                //     return () => {
+                //         ethereum.off('accountsChanged', handleNewAccounts);
+                // };
             } catch (e: any) {
                 throw new Error(e);
             }
-        }   
+        }
     }
 
     const classesFunction = (isActive: boolean): string => {
@@ -88,13 +99,13 @@ function AppHeader() {
             </div>
             <div className={styles['nav-links']}>
                 <NavLink className={({ isActive }) => isActive ? classesFunction(true) : classesFunction(false)} to='/'>
-                    Home
+                    Projects
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? classesFunction(true) : classesFunction(false)} to='/campaigns'>
-                    Campaigns
+                    Reviews
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? classesFunction(true) : classesFunction(false)} to='/my-donations'>
-                    My donations
+                    Account
                 </NavLink>
             </div>
             <div className={styles['header-right']}>
@@ -103,11 +114,8 @@ function AppHeader() {
                 </div>
                 {isConnected ?
                     <div className={styles.address}>{formatAddress()}</div>
-                    : <AppButton
-                        text={buttonText}
-                        isDisabled={isConnected}
-                        onClick={connectWalletHandler}
-                        animate={false} />}
+                    : <AppButton text={buttonText} onClick={connectWalletHandler} />
+                }
             </div>
         </header>
     );

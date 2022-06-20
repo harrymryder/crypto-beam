@@ -1,7 +1,7 @@
 import ThemeContext from '../../store/theme/theme-context';
 import { useContext, useState } from 'react';
 
-import styles from './AppButton.module.scss';
+import core from '../../theme/Core.module.scss';
 
 const AppButton: React.FC<{
     text: string,
@@ -17,7 +17,7 @@ const AppButton: React.FC<{
     const [isActive, setIsActive] = useState(false);
     let icon;
     if (props.icon) {
-        icon = <span className={styles.icon}>{props.icon}</span>;        
+        icon = <span className={core.icon}>{props.icon}</span>;        
     }
 
     // function onTapDownHandler() {
@@ -39,7 +39,8 @@ const AppButton: React.FC<{
                 paddingTop: props.paddingVertical,
                 paddingBottom: props.paddingVertical
             }}
-            className={isActive ? styles['button-active'] : styles.button}
+            // className={isActive ? styles['button-active'] : styles.button}
+            className={core.button}
             // onMouseDown={onTapDownHandler}
             // onMouseUp={onTapUpHandler} 
             onClick={props.onClick}

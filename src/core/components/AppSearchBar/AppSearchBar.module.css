@@ -1,0 +1,23 @@
+.search-bar {       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;     */
+}
+
+.search-bar__input {
+    /* margin-left: 8px; */
+    flex: 1;    
+}
+
+.search-bar input,
+.search-bar textarea {    
+    width: 100%;
+    outline: none;
+    border-color: transparent;    
+    background-color: transparent;
+}

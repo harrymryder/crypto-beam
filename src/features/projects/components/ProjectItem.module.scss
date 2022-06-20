@@ -1,0 +1,32 @@
+.tile {
+    width: auto;
+    display: flex;
+    width: 240px;
+    // height: 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: center;
+    // line-height: 0;
+    // justify-content: flex-start;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // align-items: center;
+}
+
+.image {
+    // height: auto;
+    height: 32px;
+    width: 32px;
+    border-radius: 5px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: center;
+}

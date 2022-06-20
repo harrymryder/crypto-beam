@@ -1,0 +1,21 @@
+@import '../../theme/_index.scss';
+
+.icon {
+    padding: 4px;
+    // width: 20px;
+    // height: 20px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.darkMode {
+    color: $offWhite;
+    border: 1px solid $offWhite;
+}
+
+.lightMode {
+    color: $grey;
+    border: 1px solid $grey;
+}

@@ -3,8 +3,9 @@ import useHttp from "../../hooks/use-http";
 import AppButton from "../AppButton/AppButton";
 import styles from './AppModal.module.scss';
 
-import Input from "../Input/Input";
+import Input from "../AppScreen/AppScreen";
 import { Box } from "@mui/material";
+import AppInputField from "../AppInputField/AppInputField";
 
 const API_KEY = '9b1fee36-8d3d-4103-96bd-9aa50845e865';
 const URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
@@ -81,14 +82,14 @@ function AppModal() {
 
     return (
         <form className={styles.form} onSubmit={handleDonation}>
-            <Input
-                id={'1'}
+            <AppInputField
+                // id={'1'}
                 type={'number'}
                 label={'Amount in ETH'}
                 onChange={(e: React.FormEvent<HTMLFormElement>) => setCryptoAmount(e.currentTarget.value)}
                 value={cryptoAmount} />
-            <Input
-                id={'2'}
+            <AppInputField
+                // id={'2'}
                 type={'number'}
                 label={'Amount in USD'}
                 onChange={(e: React.FormEvent<HTMLFormElement>) => setFiatAmount(e.currentTarget.value)}
